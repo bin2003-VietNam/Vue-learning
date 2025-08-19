@@ -35,16 +35,8 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="w-screen flex flex-col items-center justify-center h-screen ">
-    <h2>
-      <button @click="toggle()" :class="active ? 'text-red-500' : 'text-blue-500'">
-        Button
-      </button>
-    </h2>
-  </div> -->
-
   <div 
-    class="w-screen h-screen flex flex-row"
+    class="w-auto h-auto flex flex-row"
     >
 
     <div class="w-2/5 flex flex-col items-center justify-center h-auto"
@@ -79,9 +71,6 @@ export default {
     </div>
 
   </div>
-
-
-
 </template>
 
 <style></style>
