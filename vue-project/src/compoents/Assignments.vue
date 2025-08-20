@@ -9,9 +9,9 @@ export default {
             like: 0,
             active: false,
             assignments: [
-                { name: 'Finish project', completed: false },
-                { name: 'Read chapter 4', completed: false },
-                { name: 'Turn in homework', completed: false }
+                { name: 'Finish project', completed: false, tag: 'math' },
+                { name: 'Read chapter 4', completed: false, tag:'science' },
+                { name: 'Turn in homework', completed: false, tag:'math' }
             ],
         };
     },
