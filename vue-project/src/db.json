@@ -1,0 +1,19 @@
+{
+    "assignments": [
+        {
+            "name": "Finish project",
+            "completed": false,
+            "tag": "math"
+        },
+        {
+            "name": "Read Chapter 3",
+            "completed": false,
+            "tag": "science"
+        },
+        {
+            "name": "Turn in homework",
+            "completed": false,
+            "tag": "math"
+        }
+    ]
+}
