@@ -6,9 +6,8 @@
         </h2>
 
         <AssignmentTags 
+                        v-model:currentTag="currentTag"
                         :initial-tags="assignments.map(a => a.tag)" 
-                        :currentTag="currentTag"
-                        @change="currentTag = $event"
             />
 
         <ul class="border border-gray-500 divide-ydivide-gray-500 w-full h-full mt-6">
