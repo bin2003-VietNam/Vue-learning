@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-70 h-40 mb-3" v-show="assignments.length">
+    <Panel theme="dark" v-show="assignments.length">
         <div class="flex justify-between items-start">
             <h2 class="mb-6 font-bold ">
                 {{ title }}
@@ -10,18 +10,23 @@
 
         <AssignmentTags v-model:currentTag="currentTag" :initial-tags="assignments.map(a => a.tag)" />
 
-        <ul class="border border-gray-500 divide-ydivide-gray-500 w-full h-full mt-6">
+        <ul class="border border-gray-500 divide-ydivide-gray-500 w-auto h-auto mt-6">
             <Assignment v-for="assignment in filteredAssignment" :key="assignment.name" :assignment="assignment" />
         </ul>
 
         <slot></slot>
 
-    </div>
+        <template #footer>
+            My footer goes here
+        </template>
+
+    </Panel>
 </template>
 
 <script>
 import Assignment from './Assignment.vue';
 import AssignmentTags from './AssignmentTags.vue'
+import Panel from './Panel.vue';
 export default {
     data() {
         return {
@@ -35,7 +40,8 @@ export default {
     },
     components: {
         Assignment,
-        AssignmentTags
+        AssignmentTags,
+        Panel
     },
     computed: {
         filteredAssignment() {
