@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "db" : "npx json-server ./src/db.json -p 3001",
     "build": "vite build",
     "preview": "vite preview",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",

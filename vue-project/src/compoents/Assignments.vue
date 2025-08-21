@@ -9,12 +9,13 @@ export default {
             like: 0,
             active: false,
             assignments: [],
+            showCompleted: true
         };
     },
-    created(){
+    created() {
         fetch("http://localhost:3001/assignments")
             .then(response => response.json())
-            .then(assignments=>{
+            .then(assignments => {
                 this.assignments = assignments;
             });
     },
@@ -54,9 +55,15 @@ export default {
 </script>
 
 <template>
-    <div class="flex flex-col items-center justify-center w-full h-full">
-        <AssignmentList :assignments="filters.inProgress" title="inProgress Assignment" />
-        <AssignmentList :assignments="filters.completed" title="Completed Assignment" />
-        <AssignmentCreate @add="add" />
+    <div class="flex flex-row gap-5  justify-center w-full h-auto">
+        <AssignmentList :assignments="filters.inProgress" title="inProgress Assignment">
+            <AssignmentCreate @add="add" />
+        </AssignmentList>
+
+        <div v-show="showCompleted">
+            <AssignmentList  :assignments="filters.completed" title="Completed Assignment"
+                can-toggle @toggle="showCompleted = !showCompleted">
+            </AssignmentList>
+        </div>
     </div>
 </template>
