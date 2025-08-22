@@ -1,11 +1,21 @@
 <script setup>
-import { useFlash } from '@/composables/useFlash';
+import { onMounted, ref } from 'vue';
+import TabableTextarea from '@/components/TabableTextarea.vue'
 
-let { flash } = useFlash();
+let textarea = ref(null)
+
+let comment = ref('test value')
+
+setTimeout(()=>{
+  comment.value='it worked'
+},2000)
+
 
 </script>
 <template>
   <div class="about">
-    <button @click="flash('about page clicked')">click</button>>
+    <form>
+      <TabableTextarea style="width:100%; height: 300px;" v-model="comment"/>
+    </form>
   </div>
 </template>
