@@ -5,8 +5,17 @@ import Quiz from './components/quiz/Quiz.vue';
 </script>
 
 <template>
+  <div>
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">about</router-link>
+      <router-link to="/contact">contact</router-link>
+      <router-link to="/counter">counter</router-link>
 
-  <Quiz />
+    </nav>
+
+    <RouterView />
+  </div>
 
 </template>
 
