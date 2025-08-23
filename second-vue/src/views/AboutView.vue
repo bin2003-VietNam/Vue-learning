@@ -14,7 +14,7 @@ setTimeout(()=>{
 
 </script>
 <template>
-  <div class="about">
+  <div class="flex flex-col">
     <form>
       <TabableTextarea style="width:100%; height: 300px;" v-model="comment"/>
     </form>
