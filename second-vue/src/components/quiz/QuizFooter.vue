@@ -1,8 +1,15 @@
 <script setup>
 import { inject } from 'vue';
-let { name, changeName } = inject('name')
+import { state } from '@/store/quizStore'
 </script>
 
 <template>
-    <button @click="changeName">This is my {{ name }}</button>
+    <div>
+        <button>This is my {{ state.name }}</button>
+        <div>
+            <div v-for="question in state.question" v-bind:key="question">
+                {{ question }}
+            </div>
+        </div>
+    </div>
 </template>
