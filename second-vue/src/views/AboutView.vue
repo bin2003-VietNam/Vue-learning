@@ -1,7 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import TabableTextarea from '@/components/TabableTextarea.vue'
-import { coutner } from '@/store/counterStore';
+import {useCounterStore} from '@/store/counterStore'
+let counter = useCounterStore();
 let textarea = ref(null)
 
 let comment = ref('test value')
@@ -18,7 +19,7 @@ setTimeout(()=>{
       <TabableTextarea style="width:100%; height: 300px;" v-model="comment"/>
     </form>
     <p>
-      About Page . the current count is {{ coutner.count }}
+      About Page . the current count is {{ counter.count }}
     </p>
   </div>
 </template>
