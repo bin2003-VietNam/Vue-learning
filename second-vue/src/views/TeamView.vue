@@ -11,7 +11,7 @@ let team = useTeamStore();
 
 team.fill()
 
-let showModal = ref(false)
+
 
 
 </script>
@@ -25,23 +25,6 @@ let showModal = ref(false)
             <TeamMembers :team="team" />
         </div>
         <TeamFooter :team="team" />
-
-        <Modal :show="showModal" @close="showModal = false">
-            <template #default>
-                <p>
-                    Need to add a new member to your team ?
-                </p>
-                <form class="mt-4">
-                    <div class="flex gap-6">
-                        <input type="email" placeholder="email address" class="flex-1 p-2"/>
-                        <button>Submit</button>
-                    </div>
-                </form>
-            </template>
-            <template #footer>
-                Close
-            </template>
-        </Modal>
 
     </div>
 </template>
